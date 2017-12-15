@@ -78,6 +78,7 @@ class CoreApi:
         return MarilynApiMethod(self)
 
     def method(self, method, values=None):
+        method = method.replace('.id', '/')  # TODO Быстрый fix для отправки int в качестве метода, то есть: get.id1233
         method = method.replace('.', '/')
 
         if self.http.headers.get("X-API-Account"):
