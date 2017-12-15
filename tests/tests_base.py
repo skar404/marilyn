@@ -50,3 +50,18 @@ class TestMarilynBase(unittest.TestCase):
             self.assertTrue(True)
         else:
             self.assertTrue(False)
+
+    def test_readme_code(self):
+        import Marilyn
+
+        merilyn = Marilyn.CoreApi(login=login, password=password, api_key=self.__class__.api_key, url_api=api_url)
+
+        try:
+            merilyn.auth()
+        except Marilyn.exceptions.LoginRequired:
+            exit()
+
+        method_api = merilyn.get_api()
+        user_info = method_api.me()
+
+        self.assertEqual(user_info['email'], login)
