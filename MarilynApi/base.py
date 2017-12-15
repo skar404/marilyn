@@ -26,6 +26,12 @@ class CoreApi:
             self.http.headers.update({"X-API-Token": self.api_key, })
 
     def _login(self):
+        """
+        Login user -> get new API Token
+
+        http put to auth, send login and password,
+        response to json (token and live time)
+        """
         data = {
             "email": self.login,
             "password": self.password,
@@ -45,6 +51,10 @@ class CoreApi:
             raise LoginRequired('api key is None')
 
     def auth(self):
+        """
+        test auth users and get new api_key or use old api_key
+        :return: None
+        """
         if not self.login:
             raise LoginRequired('Login is required to auth')
 
