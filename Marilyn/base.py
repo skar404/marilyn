@@ -78,9 +78,6 @@ class CoreApi:
         return MarilynApiMethod(self)
 
     def method(self, method, values=None):
-        method = method.replace('.id', '/')  # TODO Быстрый fix для отправки int в качестве метода, то есть: get.id1233
-        method = method.replace('.', '/')
-
         if self.http.headers.get("X-API-Account"):
             del self.http.headers["X-API-Account"]
 
@@ -114,8 +111,11 @@ class MarilynApiMethod(object):
 
         return MarilynApiMethod(
             self._merilyn,
-            (self._method + '.' if self._method else '') + method
+            (self._method + '/{}' if method == 'id' else ((self._method + '/' if self._method else '') + method))
         )
 
     def __call__(self, **kwargs):
+        if kwargs.get('api_id_list'):
+            self._method = self._method.format(*kwargs['api_id_list'])
+            del kwargs['api_id_list']
         return self._merilyn.method(self._method, kwargs)
