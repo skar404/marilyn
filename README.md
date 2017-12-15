@@ -4,13 +4,13 @@
 
 Use SKD:
 ```python
-import MarilynApi
+import Marilyn
 
-merilyn = MarilynApi.CoreApi(login='login', password='password', api_key="api-key")
+merilyn = Marilyn.CoreApi(login='login', password='password', api_key="api-key")
 
 try:
     merilyn.auth()
-except MarilynApi.exceptions.LoginRequired:
+except Marilyn.exceptions.LoginRequired:
     exit()
 
 method_api = merilyn.get_api()
