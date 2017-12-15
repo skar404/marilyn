@@ -6,7 +6,10 @@ from .exceptions import *
 
 
 class CoreApi:
-    def __init__(self, login=None, password=None, api_key=None, url_api="https://app.mymarilyn.ru/"):
+    def __init__(self, login=None, password=None, api_key=None, url_api=None):
+        if url_api is None:
+            url_api = "https://app.mymarilyn.ru/"
+
         self.login = login
         self.password = password
         self.api_key = api_key
