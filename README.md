@@ -4,7 +4,7 @@
 
 Use SKD:
 ```python
-from MarilynApi import CoreApi
+import MarilynApi
 
 merilyn = MarilynApi.CoreApi(login='login', password='password', api_key="api-key")
 
