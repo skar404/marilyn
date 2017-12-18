@@ -1,6 +1,6 @@
 # Marilyn SDK
 
-> Merilyn - система автоматизации интернет-рекламы
+> [Merilyn](https://mymarilyn.ru) - система автоматизации интернет-рекламы
 
 Use SKD:
 ```python
