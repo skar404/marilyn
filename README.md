@@ -2,6 +2,12 @@
 
 > [Merilyn](https://mymarilyn.ru) - система автоматизации интернет-рекламы
 
+
+Install:
+```bash
+pip isntall Marilyn
+```
+
 Use SKD:
 ```python
 import Marilyn
