@@ -98,10 +98,10 @@ class CoreApi:
 
 
 class MarilynApiMethod(object):
-    __slots__ = ('_merilyn', '_method')
+    __slots__ = ('_marilyn', '_method')
 
-    def __init__(self, merilyn, method=None):
-        self._merilyn = merilyn
+    def __init__(self, marilyn, method=None):
+        self._marilyn = marilyn
         self._method = method
 
     def __getattr__(self, method):
@@ -110,7 +110,7 @@ class MarilynApiMethod(object):
             method = m[0] + ''.join(i.title() for i in m[1:])
 
         return MarilynApiMethod(
-            self._merilyn,
+            self._marilyn,
             (self._method + '/{}' if method == 'id' else ((self._method + '/' if self._method else '') + method))
         )
 
@@ -118,4 +118,4 @@ class MarilynApiMethod(object):
         if kwargs.get('api_id_list'):
             self._method = self._method.format(*kwargs['api_id_list'])
             del kwargs['api_id_list']
-        return self._merilyn.method(self._method, kwargs)
+        return self._marilyn.method(self._method, kwargs)

@@ -1,11 +1,11 @@
 
-class MerilynExceptions(Exception):
+class MarilynExceptions(Exception):
     pass
 
 
-class LoginRequired(MerilynExceptions):
+class LoginRequired(MarilynExceptions):
     pass
 
 
-class MethodReturn(MerilynExceptions):
+class MethodReturn(MarilynExceptions):
     pass
