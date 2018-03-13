@@ -10,19 +10,16 @@ install:
 - python setup.py -q install
 notifications:
   email: true
-
 jobs:
   include:
     - stage: deploy
-      python: "3.6"
-      deploy:
-        provider: pypi
-        user: skar404
-        password:
-          secure: WcBP35DE9Qyc8Oegs/4vd97GNACSEfGAEWEAhQl27opp9xKDZvZ9WlUKa31DE8U+zRxDm0NlkLOqdnBJ4/AlPmey9Zz8gDnUqyi6qgzDhubHxMJoDuCd85ADU4z29hRXY3jxXYFULuM5S4kM6BO8CsX87Fi4/5hdRNM14zIb7BmX7+bEvaUkCWMWYyowfB4tTVgBld8n3VBa98SrJJ3GmBmGGEDIMvTOdC7a5xv6Ra5tjroSIa0aQwmdvsOEVGeL54cMdavkZNvnCZvTW9PgX+wBapFEVMB+jo3hvw1L85k5B87iqLKMO/lixGaPGJGkNiFMlfXeVo6vQjzGNOER5p5uVhB5H6s55qY97r5wzc5/nCfF1id6tEMRmkrPT7Sdr8WdVhRnW1TS5GZWKSLkrjwPsnYlwzqOweaPJlPNvTVbKDUbFD+UxATXOr5AT01fStoR3fcOpupY0+UGvrUp1o3Y0PwpRXL0im8GrN94gmcAPwF1lKQDvrUbIRFDefz5i4BvfG3Hpo9SIPgqwkqgn9+ZtnL7JR7aSL7UZ3yfXZFoXr0UmkYKy1aochQiQSHOzgRzYXqa5GVq6wgi/kFNjUeva9g/Wb8FOz52rHjQkoY4a7L4fvooZlEiO0aB8Bm5NhYQh+VC6YmqPvaN8zXYOpr8yjNi6QVki4rf1yBWZvk=
-        on:
-          distributions: sdist bdist_wheel
-          repo: skar404/marilyn
-          tags: true
-after_success:
-  - coveralls
+    python: '3.6'
+    deploy:
+      provider: pypi
+      user: skar404
+      password:
+        secure: IpRx4aqUVPuERNiMwweZcBtcnnJYEZgG+zzHlhSI1qk771eSZtRZAtTqUn5NXPFRIwuFChEQNsNYVe4a6Dsff1Jikf7r0acOyfIO/UkdjRoMZ91Nfj6r+JEWKFKZ79GyJkRvOn1L2tIto8irVUYgDUToAoeHX5nn+JJKLipoPeW18gB7Cyc6iiGJjUrRgo5as47Vkqm7FSrfEN+En8c9AKU5wSEfkASVKel9zxMeAYkhqXo3MOlkxH2czonXFIa0RSw58ut0+IzluT8wjLrkDJU+Zw6DuBjYKcQFF7Sp6gztmVjIds53P8Q+5YrZK5m7ESiWQ6eJWjFfPhjING6qpzONHGLJcKC69RFOBHWm1aQTC2/jZTjORg+3Jg+8qfxUhXvdf8bJIZ8NcMtwOonV24jUqHELAyE2wZOOh/aOADuf6HkyFCo5I3oiQWct8gcYVay2N6PqbeZbJPTUM4R+wIqg3mJ5hOkq9dEAaQj5a5A6qy8Fa0XY6puGQ67NEiHEct8MLqLWdWi5ghQZLaoSxWQim0sjIqQbvfJThAS1i0Zj/fCUSmH0XhUDWLvu4pGZCi8lXVE4JRexrsdemrYVbn5mDxtJG6MAeBtAKYhQQwekMC4dEa3Fda4gyTw9lLeGmO6wc5Skc19L1ehSq1nOlVxMTGwGE3vU7z4aHPhsmdA=
+      on:
+        distributions: sdist bdist_wheel
+        repo: skar404/marilyn
+        tags: true

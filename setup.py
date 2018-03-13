@@ -1,13 +1,15 @@
 from distutils.core import setup
 
+from Marilyn import __version__, __author__, __email__
+
 setup(
     name='Marilyn',
     packages=['Marilyn'],  # this must be the same as the name above
-    version='0.0.1',
+    version=__version__,
     description='Marilyn SDK',
-    author='user',
-    author_email='skar404@gmail.com',
-    url='https://github.com/peterldowns/mypackage',  # use the URL to the github repo
+    author=__author__,
+    author_email=__email__,
+    url='https://github.com/skar404/marilyn/',  # use the URL to the github repo
     download_url='https://github.com/skar404/marilyn/archive/master.zip',  # I'll explain this in a second
     keywords=['marilyn', 'sdk', 'api'],  # arbitrary keywords
     classifiers=[
@@ -15,7 +17,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Alpha',
 
         # Pick your license as you wish (should match "license" above)
         'License :: OSI Approved :: MIT License',
