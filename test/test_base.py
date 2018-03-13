@@ -4,7 +4,7 @@ import Marilyn
 
 try:
     from .config import login, password, api_url
-except ModuleNotFoundError:
+except Exception:
     login = password = api_url = None
 
 
