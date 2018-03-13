@@ -1,6 +1,10 @@
 import unittest
 
-import Marilyn
+try:
+    import Marilyn
+except ModuleNotFoundError:
+    from ... import Marilyn
+
 
 try:
     from .config import login, password, api_url
