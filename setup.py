@@ -1,14 +1,35 @@
+import os
+import re
+
 from distutils.core import setup
 
-from Marilyn import __version__, __author__, __email__
+
+def read_file(path):
+    with open(os.path.join(os.path.dirname(__file__), path)) as fp:
+        return fp.read()
+
+
+def _get_version_match(content, value_name):
+    regex = r"^{} = ['\"]([^'\"]*)['\"]".format(value_name)
+    version_match = re.search(regex, content, re.M)
+    if version_match:
+        return version_match.group(1)
+    raise RuntimeError("Unable to find version string.")
+
+
+def get_value(value_name):
+    path = os.path.join('Marilyn', '__init__.py')
+
+    return _get_version_match(read_file(path), value_name)
+
 
 setup(
     name='Marilyn',
     packages=['Marilyn'],  # this must be the same as the name above
-    version=__version__,
+    version=get_value('__version__'),
     description='Marilyn SDK',
-    author=__author__,
-    author_email=__email__,
+    author=get_value('__author__'),
+    author_email=get_value('__email__'),
     url='https://github.com/skar404/marilyn/',  # use the URL to the github repo
     download_url='https://github.com/skar404/marilyn/archive/master.zip',  # I'll explain this in a second
     keywords=['marilyn', 'sdk', 'api'],  # arbitrary keywords
