@@ -12,6 +12,9 @@ setup(
     url='https://github.com/skar404/marilyn/',  # use the URL to the github repo
     download_url='https://github.com/skar404/marilyn/archive/master.zip',  # I'll explain this in a second
     keywords=['marilyn', 'sdk', 'api'],  # arbitrary keywords
+
+    install_requires=['requests'],
+
     classifiers=[
         # How mature is this project? Common values are
         #   3 - Alpha
