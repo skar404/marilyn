@@ -1,5 +1,11 @@
-build:
-  image: python:3.5
-  commands:
-      - pip install -r requirements.txt
-      - python setup.py install
+pipeline:
+  build:
+    image: ${IMAGE}
+    commands:
+        - pip install -r requirements.txt
+        - python setup.py install
+
+matrix:
+  IMAGE:
+    - python:3.4
+    - python:3.5
