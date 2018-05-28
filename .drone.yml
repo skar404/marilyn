@@ -6,12 +6,6 @@ pipeline:
         - python setup.py install
         
   publish: 
-    build:
-      image: python:3.6
-      commands:        
-          - pip install -r requirements.txt
-          - python setup.py install
-
     pypi_publish:
       image: gjtempleton/drone-pypi
       username: pypi_login
