@@ -1,12 +1,10 @@
 pipeline:
   build:
     image: python:${PYTHON_VERSION}
-    when:
-      event: deployment
-      environment: staging
-
     commands:
         - echo ${TEST}
+        - echo $${TEST}
+        
         - pip install -r requirements.txt
         - python setup.py install
 
