@@ -6,7 +6,7 @@ pipeline:
       - python setup.py install
   
   test: 
-     commands:        
+    commands:        
       - pip install pytest
       - pytest
     secrets: [ marilyn_url_api, marilyn_login, marilyn_password ]
