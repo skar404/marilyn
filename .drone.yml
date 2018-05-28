@@ -9,8 +9,5 @@ pipeline:
     image: gjtempleton/drone-pypi
     username: pypi_password
     password: pypi_password
-    repository: https://pypi.org/
+    repository: https://pypi.python.org/pypi
     secrets: [ pypi_login, pypi_password ]
-    when:
-      branch: master
-      event: tag
