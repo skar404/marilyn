@@ -8,6 +8,6 @@ pipeline:
   pypi_publish:
     image: gjtempleton/drone-pypi
     repository: https://upload.pypi.org/legacy/
-    username: pypi_password
-    password: pypi_password
+    username: ${pypi_password}
+    password: ${pypi_password}
     secrets: [ pypi_login, pypi_password ]
