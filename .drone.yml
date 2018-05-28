@@ -4,7 +4,8 @@ pipeline:
     commands:        
       - pip install -r requirements.txt
       - python setup.py install
-  
+      - pytest
+ 
   pypi_publish:
     image: username502/drone-pypi:latest
     secrets: [ PYPI_REPOSITORY, PYPI_USERNAME, PYPI_PASSWORD ]
