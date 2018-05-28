@@ -1,3 +1,4 @@
+import os
 import unittest
 
 import Marilyn
@@ -5,7 +6,7 @@ import Marilyn
 try:
     from .config import login, password, api_url
 except Exception:
-    login = password = api_url = None
+    login = password = api_url = os.environ['marilyn_login'], os.environ['marilyn_password'], os.environ['marilyn_url_api']
 
 
 class TestMarilynBase(unittest.TestCase):
