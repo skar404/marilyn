@@ -13,4 +13,3 @@ pipeline:
     secrets: [ pypi_login, pypi_password ]
     distributions:
       - sdist
-      - bdist_wheel
