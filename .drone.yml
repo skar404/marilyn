@@ -4,6 +4,9 @@ pipeline:
     commands:
         - echo ${TEST}
         - echo $${TEST}
+        - echo $TEST
+        - echo $test
+        - echo ${test}
         
         - pip install -r requirements.txt
         - python setup.py install
