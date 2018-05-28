@@ -8,3 +8,6 @@ pipeline:
   pypi_publish:
     image: justinbarrick/drone-pypi:latest
     secrets: [ PYPI_REPOSITORY, PYPI_USERNAME, PYPI_PASSWORD ]
+    when:
+      branch: master
+      event: tag
