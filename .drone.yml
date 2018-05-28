@@ -1,11 +1,11 @@
 pipeline:
   build:
-    image: ${IMAGE}
+    image: python:${IMAGE}
     commands:
         - pip install -r requirements.txt
         - python setup.py install
 
 matrix:
   IMAGE:
-    - python:3.4
-    - python:3.5
+    - 3.4
+    - 3.5
