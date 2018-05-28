@@ -4,9 +4,6 @@ pipeline:
     commands:        
       - pip install -r requirements.txt
       - python setup.py install
-    when:
-      branch: master
-      event: tag
 
   pypi_publish:
     image: gjtempleton/drone-pypi
