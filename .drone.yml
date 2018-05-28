@@ -1,8 +1,9 @@
-build:
-  image: python:$$PYTHON_VERSION
-  commands:
-    - pip install -r requirements.txt
-    - python setup.py install
+pipeline
+  build:
+    image: python:$$PYTHON_VERSION
+    commands:
+      - pip install -r requirements.txt
+      - python setup.py install
 
 matrix:
   PYTHON_VERSION:
