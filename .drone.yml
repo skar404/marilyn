@@ -11,3 +11,6 @@ pipeline:
     username: $${PYPI_LOGIN}
     password: $${PYPI_PASSWORD}
     secrets: [ pypi_login, pypi_password ]
+    distributions:
+      - sdist
+      - bdist_wheel
