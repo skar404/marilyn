@@ -6,7 +6,7 @@ import Marilyn
 try:
     from .config import login, password, api_url
 except Exception:
-    login = password = api_url = os.environ['MARILYN_LOGIN'], os.environ['MARILYN_PASSWORD'], os.environ['MARILYN_URL_API']
+    login, password, api_url = os.environ['MARILYN_LOGIN'], os.environ['MARILYN_PASSWORD'], os.environ['MARILYN_URL_API']
 
 
 class TestMarilynBase(unittest.TestCase):
