@@ -9,5 +9,5 @@ pipeline:
     image: gjtempleton/drone-pypi
     username: pypi_password
     password: pypi_password
-    repository: https://pypi.org/pypi
+    repository: https://upload.pypi.org/legacy/
     secrets: [ pypi_login, pypi_password ]
