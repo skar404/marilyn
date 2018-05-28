@@ -6,5 +6,5 @@ pipeline:
       - python setup.py install
   
   pypi_publish:
-    image: username502/drone-pypi:latest
+    image: justinbarrick/drone-pypi:latest
     secrets: [ PYPI_REPOSITORY, PYPI_USERNAME, PYPI_PASSWORD ]
