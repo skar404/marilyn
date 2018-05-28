@@ -6,6 +6,7 @@ pipeline:
       - python setup.py install
   
   test: 
+    image: python:3.6
     commands:        
       - pip install pytest
       - pytest
