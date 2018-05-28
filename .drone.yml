@@ -2,9 +2,10 @@ pipeline:
   build:
     image: python:${PYTHON_VERSION}
     commands:
+        - echo ${TEST}
         - pip install -r requirements.txt
         - python setup.py install
-
+        
 matrix:
   PYTHON_VERSION:
     - 3.4
