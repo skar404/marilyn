@@ -4,7 +4,7 @@ pipeline:
     commands:        
       - pip install -r requirements.txt
       - python setup.py install
-      - echo ${PYPI_LOGIN}
+      - echo $${PYPI_LOGIN}
     secrets: [ pypi_login, pypi_password ]
     
   pypi_publish:
