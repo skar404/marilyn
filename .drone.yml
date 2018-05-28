@@ -4,13 +4,12 @@ pipeline:
     commands:        
         - pip install -r requirements.txt
         - python setup.py install
-        
-  publish: 
-    pypi_publish:
-      image: gjtempleton/drone-pypi
-      username: pypi_login
-      password: pypi_password
-      secrets: [ pypi_login, pypi_password ]
+  
+  pypi_publish:
+    image: gjtempleton/drone-pypi
+    username: pypi_login
+    password: pypi_password
+    secrets: [ pypi_login, pypi_password ]
  
 matrix:
   PYTHON_VERSION:
