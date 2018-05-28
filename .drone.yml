@@ -1,15 +1,28 @@
 pipeline:
-  build:
+  test: 
     image: python:${PYTHON_VERSION}
     commands:        
       - pip install -r requirements.txt
       - python setup.py install
+      
+  build:
+    image: python:3.6
+    commands:        
+      - pip install -r requirements.txt
+      - python setup.py install
+  when:
+    branch: master
+    event: tag
+    
   pypi_publish:
     image: gjtempleton/drone-pypi
     username: pypi_password
     password: pypi_password
     secrets: [ pypi_login, pypi_password ]
-
+  when:
+    branch: master
+    event: tag
+  
 matrix:
   PYTHON_VERSION:
     - 3.4
