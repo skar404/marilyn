@@ -4,7 +4,7 @@ pipeline:
     commands:        
       - pip install -r requirements.txt
       - python setup.py install
-      
+
   build:
     image: python:3.6
     commands:        
@@ -13,7 +13,7 @@ pipeline:
     when:
       branch: master
       event: tag
-    
+
   pypi_publish:
     image: gjtempleton/drone-pypi
     username: pypi_password
