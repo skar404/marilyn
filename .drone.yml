@@ -1,12 +1,12 @@
 pipeline:
   build:
-    image: python:$$PYTHON_VERSION
+    image: python:3.6
     commands:
       - pip install -r requirements.txt
       - python setup.py install
 
-matrix:
-  PYTHON_VERSION:
-    - 3.4
-    - 3.5
-    - 3.6
+# matrix:
+#   PYTHON_VERSION:
+#     - 3.4
+#     - 3.5
+#     - 3.6
