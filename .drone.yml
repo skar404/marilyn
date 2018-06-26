@@ -8,10 +8,11 @@ pipeline:
   test: 
     image: python:3.6
     commands:     
-      - pip install -r requirements.txt pytest
+      - pip install -r requirements.txt pytest pytest-cov codecov
       - python setup.py install
-      - pytest
-    secrets: [ marilyn_url_api, marilyn_login, marilyn_password ]
+      - pytest --cov=./
+      - codecov -t $${CODECOV_TOKEN}
+    secrets: [ marilyn_url_api, marilyn_login, marilyn_password, CODECOV_TOKEN]
     when:
       branch: [master, dev]
 
