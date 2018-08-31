@@ -1,0 +1,31 @@
+language: python
+cache: pip
+
+python:
+- '3.4'
+- '3.5'
+- '3.6'
+
+install:
+- pip install -r requirements.txt
+- python setup.py install
+
+script:
+- pytest
+
+notifications:
+  email: true
+
+jobs:
+  include:
+  - stage: deploy
+    python: '3.6'
+    deploy:
+      provider: pypi
+      user: skar404
+      password:
+        secure: nlSrdud4NH0DpBKXz+JEf2Vkqwgol4yEgLiNE2mUuix9KfWyB5YFp5v7sC2GAOB59TU617o/JylNcl7lj/wPQUZq0JLbzv0H2jBf9hwBHJEHbWpHbbBLlLZwOVhm2qxte7ZHZxmVgRqdLk9Q6wXSRRYecvGG2b6kc8R3xgLyz+Aa4MLQfcER1oMHnf9Ml9RUz+akBdI9NG8Wf5hN5zI/KQDyejSoN5z7tNzrLvTzOQpSbI/eLQm6MEtRDtTjRA8CbC9q0El4O4wZTVABBmtxlYzEFV1K3LEvhueZ6SZmLEOVwm8o7rfUBYSqQcb0jGSQhFhxz1pkaI+Cv7wAFiZbtuTrdWe2TuY2oIEy1F+AdELm1QOmmnl+M+obziVuNnH6hRyEyK0/Mvx5U5+XxQ5SNOHXVf4zikBTma1eaiJZGN6tpfUi8aEMCeYCkGcP0Pmi61QnmfSVBr0AkXD8g0ufbm61XGylq384S8tsnMV+d/woou34ME+/LTQTMHBIKv1Kd1EI9vIhEWFeefdynHAz+gxBQJ2rwg0/TsfaDG82q0gHFTAwgAqe07OY91ZqI6qiivSoXQsl3M0oODcaGvIMv4eEykruLwYN5DiiS795+WPJ+y5ISI3bVC5CPLeOH4M89IN1LDVBtdK77o70pihg/sF2DUPnKBHVhHeMXgxGc+Q=
+      on:
+        distributions: sdist bdist_wheel
+        repo: skar404/marilyn
+        tags: true
