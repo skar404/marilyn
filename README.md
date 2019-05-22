@@ -7,7 +7,6 @@
 
 > [Marilyn](https://mymarilyn.ru) - система автоматизации интернет-рекламы
 
-
 Install:
 ```bash
 pip install Marilyn
@@ -27,6 +26,5 @@ except Marilyn.exceptions.LoginRequired:
 method_api = marilyn.get_api()
 user_info = method_api.me()
 ```
-
 
 Marilyn API - [docs](https://api-doc.mymarilyn.ru/)
