@@ -1,5 +1,6 @@
 # Marilyn SDK
 
+[![PyPI](https://img.shields.io/pypi/v/Marilyn.svg)](https://pypi.python.org/pypi/Marilyn)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c678589e9d2049299b94ede88010c1b6)](https://www.codacy.com/app/skar404/marilyn?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=skar404/marilyn&amp;utm_campaign=Badge_Grade)
 [![Updates](https://pyup.io/repos/github/skar404/marilyn/shield.svg)](https://pyup.io/repos/github/skar404/marilyn/)
 [![Build Status](https://travis-ci.org/skar404/marilyn.svg?branch=master)](https://travis-ci.org/skar404/marilyn)
